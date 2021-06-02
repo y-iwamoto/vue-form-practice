@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition name="router-transition">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -21,4 +23,31 @@ export default {
   margin-top: 60px;
 }
 
+.router-transition-enter-active {
+  animation: fadeIn .5s;
+  animation-delay: .5s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.router-transition-leave-active {
+  animation: fadeOut .5s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 </style>
