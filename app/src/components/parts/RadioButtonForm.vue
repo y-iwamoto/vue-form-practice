@@ -1,7 +1,7 @@
 <template>
- <div>
+  <div class="control mb-4">
     <template v-for="(option, index) in options">
-      <label :key="index">
+      <label :key="index" class="radio">
         <input
           type="radio"
           :name="name"

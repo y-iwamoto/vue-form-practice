@@ -4,26 +4,29 @@
             <FormTitle :step="step" :imageName="imageName" :message="message" />
         </template>
         <template v-slot:form_main>
-            <Label>-性別-</Label>
-            <RadioButtonForm
-            v-model="basicInfoForm.sex"
-            name="sex"
-            :options="sexOptions"/>
+            <div>
+                <Label>-性別-</Label>
+                <RadioButtonForm
+                v-model="basicInfoForm.sex"
+                name="sex"
+                :options="sexOptions"/>
+            </div>
 
             <Label>-生年月日-</Label>
-            <div>
+            <div class="field is-horizontal">
                 <SelectForm
                 v-model="basicInfoForm.year"
                 name="basicInfoForm.year"
-                :options="yearOptions"/>年
+                :options="yearOptions"/>
+                <span class="is-flex is-justify-content-center is-align-items-center ml-1 mr-2">年</span>
                 <SelectForm
                 v-model="basicInfoForm.month"
                 name="basicInfoForm.month"
-                :options="monthOptions"/>月
+                :options="monthOptions"/><span class="is-flex is-justify-content-center is-align-items-center ml-1 mr-2">月</span>
                 <SelectForm
                 v-model="basicInfoForm.date"
                 name="basicInfoForm.date"
-                :options="dateOptions"/>日
+                :options="dateOptions"/><span class="is-flex is-justify-content-center is-align-items-center ml-1 mr-2">日</span>
             </div>
         </template>
         <template v-slot:form_transition>
@@ -60,7 +63,7 @@ export default {
     data() {
         return {
             step: "STEP1",
-            imageName:"",
+            imageName:"address-card",
             message: "お客様の情報を入力してください",
             backLink: "",
             backButtonName: "",

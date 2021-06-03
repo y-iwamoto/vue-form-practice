@@ -4,11 +4,13 @@
             <FormTitle :step="step" :imageName="imageName" :message="message" />
         </template>
         <template v-slot:form_main>
-            <Label>現在生命保険に加入されていますか？</Label>
-            <RadioButtonForm
-            v-model="SurveyForm.insurance"
-            name="insurance"
-            :options="options"/>
+            <div>
+                <Label>現在生命保険に加入されていますか？</Label>
+                <RadioButtonForm
+                v-model="SurveyForm.insurance"
+                name="insurance"
+                :options="options"/>
+            </div>
             <transition name="hospitalizing">
                 <div v-if="SurveyForm.insurance">
                     <Label>現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</Label>
@@ -57,7 +59,7 @@ export default {
     data() {
         return {
             step: "STEP2",
-            imageName:"",
+            imageName:"chalkboard-teacher",
             message: "以下にお答えください",
             backLink: "/basic_info",
             backButtonName: "前へ戻る",

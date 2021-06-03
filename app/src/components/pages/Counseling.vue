@@ -40,7 +40,7 @@ export default {
     data() {
         return {
             step: "STEP3",
-            imageName:"",
+            imageName:"clipboard-list",
             message: "ご相談内容をご記入ください",
             backLink: "/survey",
             backButtonName: "前へ戻る",

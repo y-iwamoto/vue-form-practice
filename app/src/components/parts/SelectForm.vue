@@ -1,4 +1,5 @@
 <template>
+  <div class="select">
     <select :name="name" @change="updateValue">
       <template v-for="(option, index) in options">
         <option :value="option.value" :key="index" :selected="value == option.value">
@@ -6,6 +7,7 @@
         </option>
       </template>
     </select>
+  </div>
 </template>
 
 <script>
