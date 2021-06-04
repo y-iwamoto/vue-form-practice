@@ -1,53 +1,36 @@
 <template>
-  <div id="app">
-    <transition name="router-transition">
-      <router-view/>
-    </transition>
+  <div id="app" class="is-flex is-flex-direction-column is-justify-content-space-between">
+    <Header/>
+        <router-view/>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Header from './components/globals/Header';
+import Footer from './components/globals/Footer';
 
 export default {
   name: 'App',
+  components: {
+    Header,
+    Footer
+  }
 }
 </script>
 
 <style lang="scss">
 @import "../node_modules/bulma/bulma.sass";
+html,
+body,
+#app {
+  height:100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
-.router-transition-enter-active {
-  animation: fadeIn .5s;
-  animation-delay: .5s;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.router-transition-leave-active {
-  animation: fadeOut .5s;
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 </style>
