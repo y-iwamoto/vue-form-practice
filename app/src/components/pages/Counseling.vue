@@ -50,7 +50,7 @@ export default {
             backLink: "/survey",
             backButtonName: "前へ戻る",
             requestKey: "counselingForm",
-            nextLink: "/basic_info",
+            nextLink: "/confirming",
             nextButtonName: "次に進む",
             CounselingForm: {
                 counseling: ''

@@ -15,3 +15,9 @@ export const getCounselingInfo = (state) => {
     ? state.counselingForm
     : {}
 }
+
+export const getBirthDate = (state) => {
+    const {year, month ,date} = state.basicInfoForm ? state.basicInfoForm : {}
+    const birthdate = (year && month && date) ? `${year}年${month}月${date}日` : '';
+    return birthdate;
+}

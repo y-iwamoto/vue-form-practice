@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import BasicInfo from '../components/pages/BasicInfo.vue'
 import Survey from '../components/pages/Survey.vue';
 import Counseling from '../components/pages/Counseling.vue'
+import Confirmation from '../components/pages/Confirmation.vue'
 
 Vue.use(Router);
 
@@ -23,6 +24,11 @@ export default new Router({
           path: '/counseling',
           name: 'Counseling',
           component: Counseling
-      },
-    ]
+        },
+        {
+            path: '/confirming',
+            name: 'Confirmation',
+            component: Confirmation
+        },
+      ]
 });

@@ -84,11 +84,11 @@ export default {
             sexOptions: [
                 {
                     label: "男性",
-                    value: "man"
+                    value: "男性"
                 },
                 {
                     label: "女性",
-                    value: "woman"
+                    value: "女性"
                 }
             ],
         }

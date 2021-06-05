@@ -1,5 +1,3 @@
-export const requestsaveFormInfo = ({ commit }, formObject, key) => {
-    console.warn("formObject", formObject);
-    console.warn("key", key);
+export const requestsaveFormInfo = ({ commit }, formObject) => {
     commit('saveFormInfo', formObject);
 }

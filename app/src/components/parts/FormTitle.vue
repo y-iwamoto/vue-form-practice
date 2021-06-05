@@ -6,6 +6,7 @@
                 <i v-if="imageName === 'address-card'" class="fas fa-address-card"></i>
                 <i v-if="imageName === 'chalkboard-teacher'" class="fas fa-chalkboard-teacher"></i>
                 <i v-if="imageName === 'clipboard-list'" class="fas fa-clipboard-list"></i>
+                <i v-if="imageName === 'file-lines'" class="fas fa-file-alt"></i>
             </span>
             <span class="is-size-5">{{ message }}</span>
         </span>
