@@ -18,11 +18,15 @@
                     :backButtonName="backButtonName"
                     :nextLink="nextLink"
                     :nextButtonName="nextButtonName"
+                    :formInfo="CounselingForm"
+                    :requestKey="requestKey"
+                    @save-form="requestsaveFormInfo"
                 />
         </template>
     </FormWrapper>
 </template>
 <script>
+import { mapActions } from 'vuex'
 import FormWrapper from '../parts/FormWrapper';
 import FormTitle from '../parts/FormTitle';
 import Label from '../parts/Label';
@@ -37,6 +41,7 @@ export default {
         Textarea,
         TransitionButtons
     },
+    methods: mapActions(['requestsaveFormInfo']),
     data() {
         return {
             step: "STEP3",
@@ -44,7 +49,8 @@ export default {
             message: "ご相談内容をご記入ください",
             backLink: "/survey",
             backButtonName: "前へ戻る",
-            nextLink: "/basic_info",
+            requestKey: "counselingForm",
+            nextLink: "/confirming",
             nextButtonName: "次に進む",
             CounselingForm: {
                 counseling: ''

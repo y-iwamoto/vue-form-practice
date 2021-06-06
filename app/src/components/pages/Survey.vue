@@ -37,11 +37,16 @@
                 :backButtonName="backButtonName"
                 :nextLink="nextLink"
                 :nextButtonName="nextButtonName"
+                :formInfo="SurveyForm"
+                :requestKey="requestKey"
+                @save-form="requestsaveFormInfo"
+
             />
         </template>
     </FormWrapper>
 </template>
 <script>
+import { mapActions } from 'vuex'
 import FormTitle from '../parts/FormTitle';
 import FormWrapper from '../parts/FormWrapper';
 import Label from '../parts/Label';
@@ -56,6 +61,7 @@ export default {
         RadioButtonForm,
         TransitionButtons
     },
+    methods: mapActions(['requestsaveFormInfo']),
     data() {
         return {
             step: "STEP2",
@@ -65,6 +71,7 @@ export default {
             backButtonName: "前へ戻る",
             nextLink: "/counseling",
             nextButtonName: "次に進む",
+            requestKey: "surveyForm",
             SurveyForm: {
                 insurance: "",
                 hospitalizing: "",

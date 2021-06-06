@@ -35,12 +35,16 @@
                 :backButtonName="backButtonName"
                 :nextLink="nextLink"
                 :nextButtonName="nextButtonName"
+                :formInfo="basicInfoForm"
+                :requestKey="requestKey"
+                @save-form="requestsaveFormInfo"
             />
         </template>
 
     </FormWrapper>
 </template>
 <script>
+import { mapActions } from 'vuex'
 import RadioButtonForm from '../parts/RadioButtonForm';
 import SelectForm from '../parts/SelectForm';
 import FormTitle from '../parts/FormTitle';
@@ -60,6 +64,7 @@ export default {
         Label
     },
     mixins:[YmdMixin],
+    methods: mapActions(['requestsaveFormInfo']),
     data() {
         return {
             step: "STEP1",
@@ -69,6 +74,7 @@ export default {
             backButtonName: "",
             nextLink: "/survey",
             nextButtonName: "次に進む",
+            requestKey: "basicInfoForm",
             basicInfoForm: {
                 sex: '',
                 year: "1991",
@@ -78,11 +84,11 @@ export default {
             sexOptions: [
                 {
                     label: "男性",
-                    value: "man"
+                    value: "男性"
                 },
                 {
                     label: "女性",
-                    value: "woman"
+                    value: "女性"
                 }
             ],
         }
